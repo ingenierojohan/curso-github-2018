@@ -51,6 +51,7 @@ Git tiene 3 Estados principales:
 
 ### ***Comandos GIT :***
 ```
+git init                 ( Inicializamos el Repositorio )
 git status
 git config --list
 git add -A               (Agrega todo los archivos stage)
