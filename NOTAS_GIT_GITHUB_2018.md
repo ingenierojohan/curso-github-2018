@@ -52,9 +52,11 @@ Git tiene 3 Estados principales:
 ### ***Comandos GIT :***
 ```
 git init                 ( Inicializamos el Repositorio )
-git status
+git status               ( Ver el status de Git )
 git config --list
-git add -A               (Agrega todo los archivos stage)
-git add [archivo]        (Agrega solo un Archivo)
-
+git add -A               ( Agrega todo los archivos stage )
+git add [archivo]        ( Agrega solo un Archivo al stage )
+git rm --cached          ( Nos devolvemos un paso, Lo saca del stage )
+git rm -f [file]         ( Elimina el archivo por completo, del Stage y del Directorio )
+git commit -m            ( Agregamos comentarios de los cambios, y almacena esas instantáneas de manera permanente en directorio de Git )
 ```
