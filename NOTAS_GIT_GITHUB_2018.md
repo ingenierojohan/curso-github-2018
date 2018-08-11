@@ -54,9 +54,68 @@ Git tiene 3 Estados principales:
 git init                 ( Inicializamos el Repositorio )
 git status               ( Ver el status de Git )
 git config --list
+
+--- Enviando al Stage ---
 git add -A               ( Agrega todo los archivos stage )
 git add [archivo]        ( Agrega solo un Archivo al stage )
 git rm --cached          ( Nos devolvemos un paso, Lo saca del stage )
 git rm -f [file]         ( Elimina el archivo por completo, del Stage y del Directorio )
+
+--- Enviando al Git Repo ---
 git commit -m            ( Agregamos comentarios de los cambios, y almacena esas instantáneas de manera permanente en directorio de Git )
+git commit --ammend      ( anexa nuevos cambios al commit anterior )
+
+--- Log ---
+git log                   ( Ver los commit almacenados en Git)
+git superlog              (script para ver mas info)                      
+
+--- Tags ---
+git tag -a [version] -m [mensaje]
+
+--- Diferencias ---
+
 ```
+### ***Etiquetas Git*** ###
+__git tag__ : Nos permite agregar etiquetas a nuestros cambios.
+
+-a para la anotación  
+-m para el mensaje  
+-l nos muestra la lista de etiquetas  
+-f para renombrar  
+-d para borrar 
+
+Podemos Etiquetar commint anteriores agregando el HASH : ` git tag 0.5 13fbe687c86446e12c6e274d152cf7d8e58d64d9`
+
+
+### ***GIT LOG*** ###
+Truco : 
+```
+$ : git config --global alias.superlog "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+```
+`$: git superlog` 
+
+* git log --oneline
+* git log --graph
+* git log -2
+
+### ***Diferencias entre Commits***
+`git diff [version1] [version2]` : 
+Nos muestra las cambios de ese commit.
+* rojo: fueron cambios que se quitaron
+* verde: se agregaron cosas
+
+`git diff [tag1] [tag2]`
+
+
+### ***Borrar Commit*** ###
+`git reset --soft [SHA1]`:  
+ Nos permite quitar los cambios de un commit específico. Deja los archivos en el staging area, listos para hacer un commit.
+
+Hay que tener en cuenta que si usas git reset --soft
+Tienes 10 commits y borras el numero 7, los commits 8, 9 y 10 también se borran, y tendras un nuevo commit que tomara el numero 8.
+
+`git reset --mixed [SHA1]`:  
+ Nos elimina los cambios, también del staging area. Los archivos físicos se mantienen.
+
+
+
