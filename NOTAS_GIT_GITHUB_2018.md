@@ -72,8 +72,10 @@ git superlog              (script para ver mas info)
 --- Tags ---
 git tag -a [version] -m [mensaje]
 
---- Diferencias ---
-
+--- Borrado ---
+git reset --soft [SHA 1]        elimina los cambios hasta el staging area
+git reset --mixed [SHA 1]       elimina los cambios hasta el working area
+git reset --hard [SHA 1]        regresa hasta el commit del [SHA 1]
 ```
 ### ***Etiquetas Git*** ###
 __git tag__ : Nos permite agregar etiquetas a nuestros cambios.
@@ -117,5 +119,22 @@ Tienes 10 commits y borras el numero 7, los commits 8, 9 y 10 también se borran
 `git reset --mixed [SHA1]`:  
  Nos elimina los cambios, también del staging area. Los archivos físicos se mantienen.
 
+`git reset --hard [SHA1]`:   
+Nos elimina los cambios incluso del working directory, es el más peligroso de todos porque podemos perder parte de nuestro trabajo.
+
+Antes de hacer uso del (__Reset Hard__), utilicen este código para pasar todo el log a un file de resguardo.  
+`git log > log.txt`  
+`git log--oneline --decorate > log.txt`
 
 
+### ***GIT branch (Múltiples variantes del repositorio)***
+Las ramas son muy importantes si quieres trabajar con un equipo y no quieres tocar la rama master para no crear conflictos,
+
+`git branch [nombre]` :se crea una nueva rama
+* -l: listamos las ramas
+* -d/-D [nombre]: borramos rama
+* -m [nombre] [nombre_nuevo]: para renombrar ramas
+
+`git checkout [nombre/sha1]`: Nos permite mover entre ramas y entre commits, no vamos a borrar nada. Acá es donde podemos movernos en el tiempo.
+
+`git checkout -b [nombre_rama]`: Nos permite crear una nueva rama sin necesidad de usar branch
