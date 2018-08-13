@@ -146,3 +146,17 @@ Las ramas son muy importantes si quieres trabajar con un equipo y no quieres toc
 `git checkout [nombre/sha1]`: Nos permite mover entre ramas y entre commits, no vamos a borrar nada. Acá es donde podemos movernos en el tiempo.
 
 `git checkout -b [nombre_rama]`: Nos permite crear una nueva rama sin necesidad de usar branch
+
+
+### ***Mezclando Ramas con la Principal (master)***
+`git merge [name-branch]`  : Fusiona una rama con la actual (con la rama en la que nos encontramos posicionados).
+
+
+### ***COPIANDO PROYECTO A GITHUB***
+`git remote add [origin] [SSH/HTTPS]`   Conecta un repositorio con nuestro equipo local.
+`git remote -v`                         Lista las conexiones existentes.
+`git remote remove [origin]`            Elimina una conexión con algún repositorio.
+
+### ***Trayendo cambios desde el repositorio remoto (git fetch/pull)***
+`git fetch [origin rama]`         Descarga cambios de GitHub y crea una rama llamada origin/master que luego se debe fusionar con la master de nuestro entorno local.
+`git pull [origin rama]`          Descarga cambios de GitHub y los fusiona automáticamente la rama espejo origin/master a la rama master de nuestro entorno local.
