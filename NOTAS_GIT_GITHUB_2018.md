@@ -76,6 +76,14 @@ git tag -a [version] -m [mensaje]
 git reset --soft [SHA 1]        elimina los cambios hasta el staging area
 git reset --mixed [SHA 1]       elimina los cambios hasta el working area
 git reset --hard [SHA 1]        regresa hasta el commit del [SHA 1]
+
+--- Crear Nuevas Ramas ---
+git branch [nombre]
+git checkout -b [nombre_rama]       ( Crea Rama y se Mueve a Ella)
+
+--- Moverse entre Ramas y Commits
+git checkout [nombre/sha1]
+
 ```
 ### ***Etiquetas Git*** ###
 __git tag__ : Nos permite agregar etiquetas a nuestros cambios.
