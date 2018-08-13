@@ -160,3 +160,7 @@ Las ramas son muy importantes si quieres trabajar con un equipo y no quieres toc
 ### ***Trayendo cambios desde el repositorio remoto (git fetch/pull)***
 `git fetch [origin rama]`         Descarga cambios de GitHub y crea una rama llamada origin/master que luego se debe fusionar con la master de nuestro entorno local.
 `git pull [origin rama]`          Descarga cambios de GitHub y los fusiona automáticamente la rama espejo origin/master a la rama master de nuestro entorno local.
+
+### ***Enviando cambios al repositorio remoto***
+`git push -u [origin] [name-branch]`         Empujar una rama al repositorio remoto en GitHub.
+`git push [origin] [name-branch] --tags`     Enviar los TAGS al repositorio remoto en GitHub.
